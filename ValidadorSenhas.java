@@ -149,3 +149,44 @@ public class ValidadorSenhas {
         return true;
     }
 }
+
+/** Explicação Passo a Passo
+Importação de Biblioteca:
+
+java.util.Scanner para capturar a entrada do usuário.
+Classe Principal (ValidadorSenhas):
+
+Criamos a classe que contém a lógica do validador de senhas.
+Método Main:
+
+Cria o scanner para entrada do usuário.
+Exibe as regras de validação para o usuário entender os requisitos.
+Cria um loop que permite validar múltiplas senhas.
+Processos de Validação:
+
+Cada regra é verificada usando métodos específicos, retornando verdadeiro ou falso.
+Apresentamos o resultado de cada validação usando ✓ ou ✗ para tornar o resultado visual.
+Se todas as regras forem atendidas, a senha é considerada válida.
+Método verificarLetraMaiuscula:
+
+Percorre cada caractere da senha e verifica se pelo menos um é letra maiúscula.
+Utiliza o método Character.isUpperCase() para verificar.
+Método verificarNumeroPrimo:
+
+Percorre cada caractere da senha para identificar dígitos.
+Quando encontra um dígito, verifica se é primo usando o método auxiliar ehPrimo().
+Método ehPrimo:
+
+Implementa o algoritmo para verificação de números primos.
+Primeiro trata os casos especiais (0, 1, 2, 3).
+Para números maiores, verifica divisibilidade até a raiz quadrada do número.
+Método verificarCaractereEspecial:
+
+Define uma string contendo caracteres especiais comuns.
+Verifica se a senha contém pelo menos um desses caracteres.
+Método verificarVogaisDuplicadas:
+
+Converte a senha para minúsculas para simplificar a verificação.
+Verifica se a senha contém alguma das combinações de vogais duplicadas ("aa", "ee", etc.).
+Retorna verdadeiro apenas se NÃO contiver vogais duplicadas seguidas.
+*/

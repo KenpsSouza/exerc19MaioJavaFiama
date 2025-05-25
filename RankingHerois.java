@@ -363,3 +363,46 @@ class Heroi {
         return poderTotal;
     }
 }
+/**Explicação Passo a Passo
+1. Estrutura do Programa
+O programa está dividido em duas classes principais:
+
+RankingHerois: Classe principal que contém o método main e todas as funcionalidades do programa
+Heroi: Classe que representa um super-herói com seus atributos (força, inteligência, velocidade e poder total)
+2. Funcionalidades Implementadas
+Menu Principal
+O programa apresenta um menu interativo com as seguintes opções:
+
+Ver ranking de heróis
+Cadastrar novo herói
+Comparar dois heróis
+Personalizar fórmula de poder
+Sair
+Cadastro e Gerenciamento de Heróis
+O programa inicia com 5 heróis pré-cadastrados para exemplo
+É possível adicionar novos heróis com valores de atributos entre 1 e 100
+Cada entrada é validada para garantir valores corretos
+Visualização do Ranking
+Lista todos os heróis ordenados pelo poder total, do maior para o menor
+Mostra todos os atributos e a pontuação final de cada herói
+Exibe a fórmula atual usada para calcular o poder total
+Comparação de Heróis
+Permite selecionar dois heróis e compará-los lado a lado
+Mostra indicadores visuais (setas) para facilitar a comparação
+Indica qual herói é mais poderoso e por quantos pontos
+Personalização da Fórmula
+Permite modificar os pesos de cada atributo na fórmula de poder
+Recalcula o poder total de todos os heróis após a alteração
+Exibe a nova fórmula para o usuário
+3. Detalhes Técnicos
+Cálculo do Poder Total
+O poder é calculado pela fórmula: (Força × pesoForca) + (Inteligência × pesoInteligencia) + (Velocidade × pesoVelocidade)
+Por padrão, todos os pesos começam em 1.0, dando igual importância aos atributos
+O usuário pode ajustar os pesos para valorizar mais um ou outro atributo
+Ordenação do Ranking
+Utiliza o método Collections.sort() com um Comparator para ordenar os heróis
+A ordenação é feita em ordem decrescente de poder total
+Validação de Entrada
+Todas as entradas do usuário são validadas para evitar erros
+Quando o usuário fornece uma entrada inválida, o programa pede novamente sem travar
+*/

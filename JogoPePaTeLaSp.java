@@ -190,4 +190,35 @@ public class JogoPePaTeLaSp {
                 return "Erro ao determinar o vencedor.";
         }
     }
+    
+    /**Explicação Passo a Passo
+Importações: Importamos as classes Scanner para leitura de entrada do usuário e Random para gerar números aleatórios para a escolha do computador.
+
+Classe Principal: Criamos a classe JogoPPTLS (PPTLS = Pedra, Papel, Tesoura, Lagarto, Spock).
+
+Método Main:
+
+Criamos os objetos Scanner e Random
+Inicializamos as variáveis para controlar o jogo (placar e controle de loop)
+Exibimos as regras do jogo
+Iniciamos o loop principal
+Loop do Jogo:
+
+Mostramos o menu de opções
+Validamos a entrada do usuário (deve ser um número entre 1 e 5)
+Geramos uma escolha aleatória para o computador
+Convertemos as escolhas numéricas para texto
+Determinamos o vencedor usando o método auxiliar
+Atualizamos o placar
+Perguntamos se o jogador quer jogar novamente
+Método converterNumeroParaOpcao:
+
+Converte o número (1 a 5) para a string correspondente ("Pedra", "Papel", etc.)
+Usa uma estrutura switch-case para fazer a conversão
+Método determinarVencedor:
+
+Primeiro verifica se é empate (ambos escolheram a mesma opção)
+Usa uma estrutura switch-case aninhada para implementar todas as regras do jogo
+Retorna uma string descrevendo o resultado (quem venceu e por quê)
+     */
 }

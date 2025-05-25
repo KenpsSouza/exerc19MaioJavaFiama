@@ -72,3 +72,27 @@ public class CofrinhoInteligente {
         scanner.close();
     }
 }
+/**Explicação Passo a Passo
+Importação da Biblioteca: Começamos importando a classe Scanner que será usada para receber entrada do usuário.
+
+Declaração da Classe: Criamos a classe principal CofrinhoDeMoedas.
+
+Método Main: Este é o ponto de entrada do programa onde todo o código será executado.
+
+Criação do Scanner: Instanciamos um objeto Scanner para ler a entrada do teclado.
+
+Coleta de Dados: Usamos uma série de System.out.print e scanner.nextInt() para pedir e armazenar as quantidades de cada tipo de moeda.
+
+Cálculo do Total: Multiplicamos cada quantidade de moedas pelo seu valor correspondente e somamos todos para obter o valor total.
+
+Exibição do Total: Mostramos para o usuário quanto dinheiro ele tem no cofrinho usando System.out.printf para formatar o número com duas casas decimais.
+
+Cálculo do Valor Faltante: Calculamos quanto falta para chegar a R$ 100 subtraindo o valor total de 100.
+
+Mensagem sobre o Valor Faltante: Usamos uma estrutura condicional if-else if-else para exibir uma mensagem adequada:
+
+Se falta dinheiro, mostramos quanto falta
+Se passou de R$ 100, parabenizamos e mostramos quanto passou
+Se é exatamente R$ 100, parabenizamos de forma específica
+Cálculo de Tempo: Se o usuário já fez algum depósito, calculamos quantas semanas levariam para atingir R$ 100 mantendo o mesmo padrão de depósito semanal.
+*/
