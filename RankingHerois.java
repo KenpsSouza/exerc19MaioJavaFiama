@@ -216,3 +216,43 @@ public class RankingHerois {
         }
     }
 }
+/**Explicação Passo a Passo
+1. Estrutura de Dados
+Em vez de usar classes e objetos mais complexos, estou usando arrays simples para armazenar os dados:
+
+nomes: Array para os nomes dos heróis
+forcas, inteligencias, velocidades: Arrays para os atributos
+poderes: Array para armazenar o poder total calculado
+2. Funcionalidades
+Menu Principal
+O programa oferece 4 opções básicas:
+
+Cadastrar herói
+Ver ranking
+Comparar dois heróis
+Sair
+Cadastro de Heróis
+Limita o cadastro a 10 heróis para simplicidade
+Solicita nome e os três atributos (força, inteligência, velocidade)
+Calcula automaticamente o poder total usando a fórmula personalizada
+Visualização do Ranking
+Mostra a fórmula de poder utilizada
+Ordena os heróis do mais poderoso para o menos poderoso
+Exibe uma tabela com todos os atributos
+Comparação de Heróis
+Permite selecionar dois heróis pelo número
+Mostra lado a lado os atributos para comparação
+Identifica qual herói é mais poderoso
+3. Algoritmo de Ordenação
+O método ordenarHeroisPorPoder usa um algoritmo simples de ordenação por seleção:
+
+Encontra o herói com maior poder
+Troca a posição dele com o primeiro da lista não ordenada
+Repete o processo para o resto da lista
+Este código é mais simples que o anterior por várias razões:
+
+Usa arrays em vez de classes e objetos
+Tem um limite fixo de heróis (10)
+Implementa menos verificações de erros
+Usa um algoritmo de ordenação mais simples de entender
+Não permite alterar a fórmula de poder depois de definida inicialmente*/

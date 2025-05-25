@@ -96,3 +96,27 @@ public class SistemaVotacao {
         scanner.close();
     }
 }
+/**Explicação Passo a Passo (Simplificada)
+Importação necessária: Importamos apenas a classe Scanner para ler a entrada do usuário.
+
+Arrays para armazenar dados:
+
+candidatos: Guarda os nomes dos cinco mascotes
+votos: Armazena a quantidade de votos para cada mascote (na mesma posição)
+Loop de votação:
+
+O programa continua recebendo votos até o usuário digitar "fim"
+Cada voto é um número que corresponde ao candidato
+O programa verifica se a entrada é válida antes de contabilizar o voto
+Contagem e exibição dos resultados:
+
+Mostra o total de votos
+Para cada candidato, exibe:
+Nome
+Número de votos recebidos
+Percentual do total
+Identifica e anuncia o vencedor
+Tratamento de erros básico:
+
+Se o usuário digitar algo que não é um número nem "fim", o programa avisa
+Se o usuário digitar um número fora do intervalo válido, também avisa*/
