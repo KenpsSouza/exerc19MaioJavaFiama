@@ -82,3 +82,32 @@ public class CodigosPerdidos {
         return mensagem.toString();
     }
 }
+/**Explicação Passo a Passo
+1. Estrutura do Programa
+O programa tem uma estrutura simples dividida em:
+
+Método main: Controla o fluxo principal do programa
+Método decodificarCodigos: Responsável por processar os códigos e gerar a mensagem decodificada
+2. Entrada do Usuário
+O programa pede ao usuário que informe quantos códigos irá inserir
+Em seguida, solicita cada código individualmente
+Armazena os códigos em um array de strings
+3. Processo de Decodificação
+Para cada código (como "4H"):
+
+Separa o número (4) da letra (H)
+O número pode ter múltiplos dígitos, então pegamos todos os caracteres exceto o último
+A letra é sempre o último caractere do código
+Converte o número para inteiro
+Adiciona a letra ao resultado o número de vezes indicado
+4. Tratamento de Erros Básico
+Verifica se o código tem pelo menos 2 caracteres (um para o número e um para a letra)
+Usa try-catch para lidar com possíveis erros na conversão do número
+5. Saída
+Exibe a mensagem decodificada completa ao final do processo
+Exemplo:
+Para a entrada ["4H", "7A", "2C"], o programa vai:
+Processar "4H": adicionar "HHHH"
+Processar "7A": adicionar "AAAAAAA"
+Processar "2C": adicionar "CC"
+Resultado final: "HHHHAAAAACC"*/
