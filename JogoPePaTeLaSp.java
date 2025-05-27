@@ -3,11 +3,7 @@ package exercicios19MaioJavaFiama;
 import java.util.Scanner;
 import java.util.Random;
 
-/**
- * Jogo de Pedra, Papel, Tesoura, Lagarto e Spock
- * Versão estendida do clássico jogo "Pedra, Papel, Tesoura" que adiciona
- * as opções "Lagarto" e "Spock", popularizada pela série The Big Bang Theory.
- */
+
 public class JogoPePaTeLaSp {
     public static void main(String[] args) {
         // Criando objetos para entrada do usuário e geração de números aleatórios
