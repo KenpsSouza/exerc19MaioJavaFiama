@@ -100,7 +100,7 @@ public class CodigosPerdidos {
                     
                     for (int i = 0; i < repeticoes; i++) {
                         mensagem.append(letra);
-                    }
+                    }    
                 } catch (NumberFormatException e) {
                     System.out.println("Código inválido: " + codigo + " - Não foi possível converter a parte numérica.");
                 }
