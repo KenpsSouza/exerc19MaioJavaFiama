@@ -6,18 +6,15 @@ import java.util.Random;
 
 public class JogoPePaTeLaSp {
     public static void main(String[] args) {
-        // Criando objetos para entrada do usuário e geração de números aleatórios
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Random random = new Random();
         
-        // Variáveis para controlar o jogo
         boolean jogarNovamente = true;
         int vitoriasUsuario = 0;
         int vitoriasComputador = 0;
         int empates = 0;
         
-        // Mensagem de boas-vindas e explicação do jogo
-        System.out.println("===== JOGO DE PEDRA, PAPEL, TESOURA, LAGARTO E SPOCK =====");
+        System.out.println("Bem-vindo ao Jogo de Pedra, Papel, Tesoura, Lagarto e Spock!");
         System.out.println("\nRegras:");
         System.out.println("- Tesoura corta Papel");
         System.out.println("- Papel cobre Pedra");
@@ -30,7 +27,6 @@ public class JogoPePaTeLaSp {
         System.out.println("- Spock vaporiza Pedra");
         System.out.println("- Pedra quebra Tesoura");
         
-        // Loop principal do jogo
         while (jogarNovamente) {
             System.out.println("\nEscolha uma opção:");
             System.out.println("1 - Pedra");
@@ -40,14 +36,12 @@ public class JogoPePaTeLaSp {
             System.out.println("5 - Spock");
             System.out.print("\nDigite o número da sua escolha: ");
             
-            // Lê a escolha do usuário
             int escolhaUsuario = 0;
             boolean entradaValida = false;
             
-            // Verifica se a entrada é válida (entre 1 e 5)
             while (!entradaValida) {
                 try {
-                    escolhaUsuario = scanner.nextInt();
+                    escolhaUsuario = sc.nextInt();
                     if (escolhaUsuario >= 1 && escolhaUsuario <= 5) {
                         entradaValida = true;
                     } else {
@@ -55,22 +49,18 @@ public class JogoPePaTeLaSp {
                     }
                 } catch (Exception e) {
                     System.out.print("Entrada inválida! Digite um número: ");
-                    scanner.next(); // Limpa o buffer do scanner
+                    sc.next(); 
                 }
             }
             
-            // Gera a escolha do computador (1 a 5)
             int escolhaComputador = random.nextInt(5) + 1;
             
-            // Mostra as escolhas
             System.out.println("\nSua escolha: " + converterNumeroParaOpcao(escolhaUsuario));
             System.out.println("Escolha do computador: " + converterNumeroParaOpcao(escolhaComputador));
             
-            // Determina o resultado do jogo
             String resultado = determinarVencedor(escolhaUsuario, escolhaComputador);
             System.out.println("\nResultado: " + resultado);
             
-            // Atualiza o placar
             if (resultado.contains("Você venceu")) {
                 vitoriasUsuario++;
             } else if (resultado.contains("Computador venceu")) {
@@ -79,15 +69,13 @@ public class JogoPePaTeLaSp {
                 empates++;
             }
             
-            // Mostra o placar atual
             System.out.println("\nPlacar:");
             System.out.println("Você: " + vitoriasUsuario);
             System.out.println("Computador: " + vitoriasComputador);
             System.out.println("Empates: " + empates);
             
-            // Pergunta se o usuário deseja jogar novamente
             System.out.print("\nDeseja jogar novamente? (S/N): ");
-            String resposta = scanner.next().toUpperCase();
+            String resposta = sc.next().toUpperCase();
             jogarNovamente = resposta.equals("S") || resposta.equals("SIM");
         }
         
@@ -96,13 +84,10 @@ public class JogoPePaTeLaSp {
         System.out.println("Computador: " + vitoriasComputador);
         System.out.println("Empates: " + empates);
         
-        // Fecha o scanner para evitar vazamento de recursos
-        scanner.close();
+        sc.close();
     }
     
-    /**
-     * Converte o número da opção para o nome correspondente
-     */
+   
     private static String converterNumeroParaOpcao(int numero) {
         switch (numero) {
             case 1: return "Pedra";
@@ -114,16 +99,13 @@ public class JogoPePaTeLaSp {
         }
     }
     
-    /**
-     * Determina quem venceu o jogo com base nas escolhas
-     */
+    
     private static String determinarVencedor(int escolhaUsuario, int escolhaComputador) {
-        // Se as escolhas forem iguais, é empate
         if (escolhaUsuario == escolhaComputador) {
             return "Empate!";
         }
         
-        // Implementação das regras do jogo
+        // regras do jogo
         // 1: Pedra, 2: Papel, 3: Tesoura, 4: Lagarto, 5: Spock
         
         switch (escolhaUsuario) {
@@ -186,35 +168,5 @@ public class JogoPePaTeLaSp {
                 return "Erro ao determinar o vencedor.";
         }
     }
-    
-    /**Explicação Passo a Passo
-Importações: Importamos as classes Scanner para leitura de entrada do usuário e Random para gerar números aleatórios para a escolha do computador.
-
-Classe Principal: Criamos a classe JogoPPTLS (PPTLS = Pedra, Papel, Tesoura, Lagarto, Spock).
-
-Método Main:
-
-Criamos os objetos Scanner e Random
-Inicializamos as variáveis para controlar o jogo (placar e controle de loop)
-Exibimos as regras do jogo
-Iniciamos o loop principal
-Loop do Jogo:
-
-Mostramos o menu de opções
-Validamos a entrada do usuário (deve ser um número entre 1 e 5)
-Geramos uma escolha aleatória para o computador
-Convertemos as escolhas numéricas para texto
-Determinamos o vencedor usando o método auxiliar
-Atualizamos o placar
-Perguntamos se o jogador quer jogar novamente
-Método converterNumeroParaOpcao:
-
-Converte o número (1 a 5) para a string correspondente ("Pedra", "Papel", etc.)
-Usa uma estrutura switch-case para fazer a conversão
-Método determinarVencedor:
-
-Primeiro verifica se é empate (ambos escolheram a mesma opção)
-Usa uma estrutura switch-case aninhada para implementar todas as regras do jogo
-Retorna uma string descrevendo o resultado (quem venceu e por quê)
-     */
+  
 }
