@@ -2,103 +2,92 @@ package exercicios19MaioJavaFiama;
 
 import java.util.Scanner;
 
-/**
- * Busca Binária no Mundo dos Feitiços
- * Este programa implementa uma busca binária para encontrar um feitiço
- * em uma lista ordenada de feitiços mágicos.
- */
 public class BuscaFeiticos {
     public static void main(String[] args) {
-        // Scanner para entrada do usuário
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        boolean continuar = true;
         
-        // Boas-vindas
-        System.out.println("=== BIBLIOTECA MÁGICA DE HOGWARTS ===");
-        System.out.println("Sistema de Busca de Feitiços\n");
-        
-        // Definir a lista de feitiços (já ordenada alfabeticamente)
+        // Lista de feitiços ordenada 
         String[] feiticos = {
-            "Accio", "Alohomora", "Avada Kedavra", "Crucio", "Defensio",
-            "Expecto Patronum", "Expelliarmus", "Finite Incantatem", "Imperius", 
-            "Lumos", "Nox", "Obliviate", "Petrificus Totalus", "Riddikulus", "Wingardium Leviosa"
+            "Aceleratio", "Defensio", "Expelliarmus", "Lumos", "Wingardium Leviosa"
         };
         
-        // Mostrar os feitiços disponíveis
-        System.out.println("Lista de feitiços disponíveis:");
-        for (int i = 0; i < feiticos.length; i++) {
-            System.out.println((i+1) + ". " + feiticos[i]);
+        while (continuar) {
+        	System.out.println("\n\n\n");
+			// Exibir cabeçalho do sistema	
+			System.out.println("=============================================");
+			System.out.println("  Bem-vindo ao Sistema de Busca de Feitiços");
+			System.out.println("       Biblioteca Mágica de Hogwarts");
+			System.out.println("   =======================================");
+            System.out.println();
+            
+            // Mostrar os feitiços disponíveis
+            System.out.println("Lista de feitiços disponíveis:");
+            for (int i = 0; i < feiticos.length; i++) {
+                System.out.println("- " + feiticos[i]);
+            }
+            
+            System.out.print("\nDigite o nome do feitiço que deseja encontrar: ");
+            String feiticoBuscado = sc.nextLine();
+            
+            // Realizar a busca binária e mostrar passos
+            System.out.println("\nRealizando busca por: " + feiticoBuscado);
+            int posicao = buscaBinaria(feiticos, feiticoBuscado);
+            
+            if (posicao != -1) {
+                System.out.println("\nFeitiço encontrado na posição " + posicao);
+                System.out.println("Nome do feitiço: " + feiticos[posicao]);
+            } else {
+                System.out.println("\nFeitiço não encontrado na biblioteca.");
+                System.out.println("Verifique se digitou o nome corretamente.");
+            }
+            
+            System.out.print("\nDeseja buscar outro feitiço? (S/N): ");
+            String resposta = sc.nextLine();
+            
+            if (resposta.equalsIgnoreCase("N") || resposta.equalsIgnoreCase("Não") || 
+                resposta.equalsIgnoreCase("Nao")) {
+                continuar = false;
+                System.out.println("\nObrigado por utilizar o sistema!");
+            } else {
+                System.out.println("\n\n\n");
+            }
         }
         
-        // Solicitar o feitiço a ser pesquisado
-        System.out.print("\nQual feitiço você deseja encontrar? ");
-        String feiticoBuscado = scanner.nextLine();
-        
-        // Realizar a busca binária
-        int posicao = buscaBinaria(feiticos, feiticoBuscado);
-        
-        // Mostrar o resultado
-        if (posicao != -1) {
-            System.out.println("\nFeitiço encontrado na posição " + posicao);
-            System.out.println("O feitiço '" + feiticos[posicao] + "' está na prateleira " + (posicao + 1) + "!");
-        } else {
-            System.out.println("\nO feitiço '" + feiticoBuscado + "' não foi encontrado em nossa biblioteca.");
-            System.out.println("Talvez você queira consultar a Seção Restrita?");
-        }
-        
-        // Fechar o scanner
-        scanner.close();
+        sc.close();
     }
     
-    /**
-     * Implementa o algoritmo de busca binária
-     * 
-     * @param feiticos Array de feitiços ordenado
-     * @param feiticoBuscado Feitiço que está sendo procurado
-     * @return índice do feitiço encontrado ou -1 se não encontrar
-     */
+    // algoritmo de busca binária
     private static int buscaBinaria(String[] feiticos, String feiticoBuscado) {
-        // Imprimir uma mensagem para mostrar que a busca está começando
-        System.out.println("\nIniciando busca mágica...");
+        int inicio = 0;
+        int fim = feiticos.length - 1;
+        int passos = 0;
         
-        int inicio = 0;                   // Início da área de busca
-        int fim = feiticos.length - 1;    // Fim da área de busca
-        int tentativas = 0;               // Contador de tentativas
-        
-        // Enquanto houver área para procurar
         while (inicio <= fim) {
-            // Incrementa o contador de tentativas
-            tentativas++;
-            
-            // Calcula o meio da área atual
+            passos++;
             int meio = (inicio + fim) / 2;
             
-            // Mostra o processo de busca
-            System.out.println("Tentativa " + tentativas + ": Verificando posição " + meio + 
-                              " (" + feiticos[meio] + ")");
+            System.out.println("Passo " + passos + ": Verificando posição " + meio + " (" + feiticos[meio] + ")");
             
-            // Compara o feitiço do meio com o buscado
-            int resultadoComparacao = feiticoBuscado.compareToIgnoreCase(feiticos[meio]);
+            // Comparação ignorando maiúsculas/minúsculas
+            int comparacao = feiticoBuscado.compareToIgnoreCase(feiticos[meio]);
             
-            // Se encontrou o feitiço
-            if (resultadoComparacao == 0) {
-                System.out.println("Feitiço encontrado após " + tentativas + " tentativas!");
+            if (comparacao == 0) {
                 return meio;
             }
             
-            // Se o feitiço buscado vem antes na ordem alfabética
-            if (resultadoComparacao < 0) {
-                System.out.println("O feitiço deve estar antes. Buscando na primeira metade...");
+            // Buscar na primeira metade (feitiço vem antes alfabeticamente)
+            if (comparacao < 0) {
                 fim = meio - 1;
-            } 
-            // Se o feitiço buscado vem depois na ordem alfabética
+                System.out.println("O feitiço buscado vem antes na ordem alfabética. Buscando na primeira metade.");
+            }
+            // Buscar na segunda metade (feitiço vem depois alfabeticamente)
             else {
-                System.out.println("O feitiço deve estar depois. Buscando na segunda metade...");
                 inicio = meio + 1;
+                System.out.println("O feitiço buscado vem depois na ordem alfabética. Buscando na segunda metade.");
             }
         }
         
-        // Se chegou aqui, não encontrou o feitiço
-        System.out.println("Busca concluída após " + tentativas + " tentativas. Feitiço não encontrado.");
         return -1;
     }
 }

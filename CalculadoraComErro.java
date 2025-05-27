@@ -108,3 +108,44 @@ public class CalculadoraComErro {
         }
     }
 }
+/**
+Explicação Passo a Passo
+1. Estrutura do Programa
+O programa é dividido em três partes principais:
+
+método main: controla o fluxo principal e interação com o usuário
+método calcular: realiza as operações matemáticas básicas
+método calcularErro: calcula o erro aleatório a ser adicionado
+2. Entrada e Processamento
+Solicitação de Dados:
+
+A calculadora pede dois números e um operador matemático (+, -, *, /)
+Os dados são lidos através do objeto Scanner
+Cálculo Básico:
+
+A função calcular() recebe os dois números e o operador
+Usa uma estrutura switch para determinar a operação a ser realizada
+Retorna o resultado correto ou NaN (Not a Number) em caso de erro
+Adição do Erro:
+
+Após obter o resultado correto, calculamos o erro com a função calcularErro()
+Este erro é então adicionado ao resultado correto
+3. Cálculo do Erro
+A função calcularErro() é a parte central do programa:
+
+Primeiro, calcula o valor absoluto do resultado (para funcionar com números negativos)
+Segundo, determina o erro máximo possível (1% do valor absoluto)
+Terceiro, gera um percentual aleatório entre 0 e 1 usando random.nextDouble()
+Quarto, multiplica o erro máximo pelo percentual aleatório
+Finalmente, decide aleatoriamente se o erro será positivo ou negativo
+4. Saída
+O programa exibe:
+
+O resultado matematicamente correto
+O resultado com o erro adicionado
+O valor do erro e sua porcentagem em relação ao resultado
+5. Características Adicionais
+Tratamento de divisão por zero
+Validação da operação matemática
+Opção para realizar múltiplos cálculos
+Formatação do percentual de erro com 4 casas decimais */
