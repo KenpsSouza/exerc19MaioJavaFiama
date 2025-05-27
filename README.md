@@ -74,7 +74,3 @@ Valida senhas de acordo com critérios diferentes:
 - Não pode ter vogais duplicadas seguidas
 
 O usuário recebe feedback sobre quais regras sua senha atende. Excelente para treinar análise de strings, uso de funções e lógica condicional.
-
----
-
-**Bons estudos e boas práticas de programação!** ✨
