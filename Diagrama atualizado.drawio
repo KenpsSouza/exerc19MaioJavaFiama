@@ -8,7 +8,7 @@
           <mxGeometry x="260" y="10" width="200" height="210" as="geometry" />
         </mxCell>
         <mxCell id="eQRYiuW7diUNmXmMHfZg-2" value="&lt;&lt;abstract&gt;&gt;&#xa;Futebol&#xa;------------------------&#xa;- modalidade: String&#xa;- numeroJogadores: int&#xa;- duracaoPartida: int&#xa;- regras: String&#xa;------------------------&#xa;+ jogar(): void {abstract}&#xa;+ aplicarRegras(): void&#xa;+ iniciarPartida(): void&#xa;+ finalizarPartida(): void" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="30" y="10" width="200" height="180" as="geometry" />
+          <mxGeometry x="20" y="10" width="200" height="180" as="geometry" />
         </mxCell>
         <mxCell id="eQRYiuW7diUNmXmMHfZg-3" value="Jogador&#xa;------------------------&#xa;- posicao: String&#xa;- numeroCamisa: int&#xa;- energia: int&#xa;- gols: int&#xa;------------------------&#xa;" style="swimlane;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="500" y="300" width="130" height="100" as="geometry" />
@@ -32,7 +32,7 @@
           <mxGeometry x="280" y="545" width="160" height="110" as="geometry" />
         </mxCell>
         <mxCell id="eQRYiuW7diUNmXmMHfZg-10" value="Time&#xa;------------------------&#xa;- nome: String&#xa;- cidade: String&#xa;- anoFundacao: int&#xa;- titulos: int&#xa;------------------------&#xa;+ adicionarJogador(): void&#xa;+ removerJogador(): void&#xa;+ escalarTime(): void&#xa;+ treinar(): void" style="swimlane;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="650" y="320" width="160" height="180" as="geometry" />
+          <mxGeometry x="640" y="320" width="160" height="180" as="geometry" />
         </mxCell>
         <mxCell id="eQRYiuW7diUNmXmMHfZg-12" value="&lt;&lt;interface&gt;&gt;&#xa;Habilidades&#xa;------------------------&#xa;+ driblar(): void&#xa;+ passar(): void&#xa;+ cabecear(): void" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=35;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;fillColor=#e6f7ff;strokeColor=#1890ff;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="500" y="565" width="150" height="90" as="geometry" />
